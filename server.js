@@ -19,17 +19,20 @@ venom
   .create({
     session: 'quiz-session',
     multidevice: true,
-    headless: 'new', // Executa o navegador sem interface gráfica
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-accelerated-2d-canvas',
-      '--no-first-run',
-      '--no-zygote',
-      '--single-process',
-      '--disable-gpu'
-    ]
+    // Permite que o Puppeteer baixe e gerencie o próprio navegador Chromium
+    autoClose: 0,
+    options: {
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-accelerated-2d-canvas',
+        '--no-first-run',
+        '--no-zygote',
+        '--single-process',
+        '--disable-gpu'
+      ]
+    }
   })
   .then((client) => {
     clientWhatsapp = client;

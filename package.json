@@ -1,0 +1,14 @@
+{
+  "name": "quiz-whatsapp-backend",
+  "version": "1.0.0",
+  "description": "Backend para recepção de notas e envio para o WhatsApp via Venom-Bot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "venom-bot": "^5.0.21"
+  }
+}
